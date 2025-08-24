@@ -7,11 +7,11 @@ type childrenType=ReactNode
 function ContextProvider({children}:{children:childrenType}){
     
     const [theme,setTheme]=useState("dark");
-    const [value,setValue]=useState(0);
-    const fun=()=>{
-        setValue(value+1);
+    
+    const toggle=()=>{
+        setTheme("light");
     }
-    const varToPass:contextVariable={theme,value,fun};
+    const varToPass:contextVariable={theme,toggle};
     return(
         <Appcontext.Provider value={varToPass}>{children} </Appcontext.Provider>
     )
